@@ -119,13 +119,12 @@
 
                     // Differenza (visitator - Pacific) in minuti
                     const diffMin = Math.round(userOffsetMin - pacOffsetMin);
-                    const diffSign = diffMin >= 0 ? '+' : '-';
+                    const diffSign = diffMin >= 0 ? 'avanti' : 'indietro';
                     const diffAbs = Math.abs(diffMin);
                     const diffH = Math.floor(diffAbs / 60);
-                    const diffM = diffAbs % 60;
 
                     // Popola elementi (testi in italiano)
-                    userTzEl.textContent = `Da te sono ${diffSign}${diffH} ore rispetto a Luca`;
+                    userTzEl.textContent = `Sei ${diffH} ore ${diffSign} rispetto a Luca.`;
                     lucaTzEl.textContent = `America/Seattle — ${formatOffset(pacOffsetMin)}`;
                     visitorTzEl.textContent = `${visitorTz} — ${formatOffset(userOffsetMin)}`;
                 }
